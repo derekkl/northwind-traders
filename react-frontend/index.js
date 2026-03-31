@@ -12,7 +12,7 @@ app.use(express.static(`${__dirname}/build`));
 const apiProxy = proxy('http://northwind:8080', {
   proxyReqPathResolver: req => req.originalUrl
 });
-app.use('/api/*', apiProxy);
+app.use('/api/:splat*', apiProxy);
 
 app.listen(8080);
 console.log('Server started, http://localhost:8080/');
