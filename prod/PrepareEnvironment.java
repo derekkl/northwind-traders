@@ -93,7 +93,7 @@ public class PrepareEnvironment {
         .withNewSpec()
         .addToContainers(new ContainerBuilder()
           .withName(NORTHWIND_DB)
-          .withImage("bitnami/postgresql:14.5.0")
+          .withImage("bitnami/postgresql:latest")
           .addToEnv(new EnvVar("POSTGRESQL_USERNAME", USER, null))
           .addToEnv(new EnvVar("POSTGRESQL_PASSWORD", PASSWORD, null))
           .addNewPort().withContainerPort(5432).endPort()
